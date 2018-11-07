@@ -25,7 +25,7 @@ pip install Pillow
 pip freeze > requirements.txt
 
 # add message storage to settings
-echo MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage' >> ./$DJANGO_PROJECT/settings.py
+echo -e "\n MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'" >> ./$DJANGO_PROJECT/settings.py 
 
 # ======================================== #
 # if you are not splitting up your settings.py file into production and local
