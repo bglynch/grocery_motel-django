@@ -12,3 +12,11 @@ Create a django project
 ```bash
 $ bash scripts/a-create-django-project.sh <projectname>
 ```
+
+### b-media-and-static.sh
+Add static folder and media folder  
+Install Pillow  
+Add media context processor
+```bash
+$ bash scripts/b-media-and-static.sh
+```
