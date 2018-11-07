@@ -22,7 +22,7 @@ sed -i -e "/'django.contrib.messages.context_processors.messages',/a\           
 
 # install pillow, Python Imaging Library
 pip install Pillow
-pip freeze >> requirements.txt
+pip freeze > requirements.txt
 
 # add message storage to settings
 echo MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage' >> ./$DJANGO_PROJECT/settings.py
