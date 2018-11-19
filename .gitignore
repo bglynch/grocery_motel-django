@@ -1,2 +1,4 @@
 venv
 README-draft.md
+db.sqlite3
+Pycache

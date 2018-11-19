@@ -31,7 +31,7 @@ sed -i "/ALLOWED_HOSTS/s/\[\]/\['$C9_HOSTNAME'\]/g" $ProjectName/settings.py
 
 
 # add database to git ignore
-echo db.sqlite3 > .gitignore
+echo db.sqlite3 >> .gitignore
 
 
 # migrate the database
