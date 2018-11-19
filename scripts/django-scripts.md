@@ -4,14 +4,48 @@
 
 # Bash Scripts for Automating Django Apps
 ##### Scripts are written for projects developed using the [Cloud 9 IDE](https://aws.amazon.com/cloud9/?origin=c9io)
+
 ---
 
-
-### a-create-django-project.sh
-Create a django project
-```bash
-$ bash scripts/a-create-django-project.sh <projectname>
+## Setup
+Create a new blank Cloud9 workspace.  
+To use these scripts, you must be working in a virtual env.  
+To do so, enter the following commands....
+##### Option 01 - Python 3.4:  
 ```
+name:~/workspace (master) $ sudo pip install virtualenv
+name:~/workspace (master) $ virtualenv -p /usr/bin/python3.4 venv
+name:~/workspace (master) $ source venv/bin/activate
+(venv) name:~/workspace (master) $ 
+```
+  
+  
+##### Option 02 - Python 3.6:  
+```
+name:~/workspace (master) $ sudo apt update
+name:~/workspace (master) $ sudo apt install python3.6-venv  
+name:~/workspace (master) $ python3.6 -mvenv venv
+name:~/workspace (master) $ source venv/bin/activate
+(venv) name:~/workspace (master) $ 
+```
+---
+
+## Bash Scripts
+Thses scripts musy be run in alphabetical order while not altering code between scripts.
+#### Create Django Project
+```bash
+$ bash scripts/a-create-django-project.sh
+```
+- Creates a django project(version 2.0.8)  
+- Project name is created by user input  
+- Add `$ run` bash alais in place of `$ python manage.py runserver`
+
+Once the script has run, please reset the .bashrc file and .bash_aliases file  
+```
+source ~/.bashrc
+source ~/.bash_aliases
+source venv/bin/activate
+````
 
 ### b-media-and-static.sh
 Add static folder and media folder  
