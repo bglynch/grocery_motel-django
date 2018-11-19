@@ -47,10 +47,11 @@ source ~/.bash_aliases
 source venv/bin/activate
 ````
 
-### b-media-and-static.sh
-Add static folder and media folder  
-Install Pillow  
-Add media context processor
+
+#### Create Media and Static directories
 ```bash
 $ bash scripts/b-media-and-static.sh
 ```
+- Add static folder and media folder  
+- Install Pillow  
+- Add media context processor
