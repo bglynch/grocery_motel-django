@@ -9,7 +9,7 @@ SECRET_KEY = ')$wd=*_swxaq62ffokxp*%_ssx4xlh2795y*&s9r(+oxwipblx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['grocery-motel-django-bglynch.c9users.io']
+ALLOWED_HOSTS = ['grocery-motel-django-bglynch.c9users.io', 'bglynch-grocerymotel-django.herokuapp.com']
 
 
 # Application definition
