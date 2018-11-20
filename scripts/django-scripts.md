@@ -69,6 +69,7 @@ source ~/.bashrc
 source venv/bin/activate
 ````
 
+
 #### AWS Setup script
 ```bash
 $ bash scripts/d-aws-setup.sh
@@ -76,3 +77,12 @@ $ bash scripts/d-aws-setup.sh
 - Install boto, boto3, django-storages
 - Create custom_storages.py
 - 'storages' added to INSTALLED_APPS
+
+
+#### Heroku setup script
+Before running this script, please create a Heroku App
+```bash
+$ bash scripts/e-heroku-setup.sh
+```
+- Creates Procfile
+- Update allowed hosts
