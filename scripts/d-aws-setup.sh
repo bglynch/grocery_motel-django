@@ -26,7 +26,7 @@ EOT
 
 # BASE SETTINGS
 # add storages to installed apps
-sed -i "/INSTALLED_APPS/s/\[/\[\n    'storages'/g" $DJANGO_PROJECT/settings/base.py
+sed -i "/INSTALLED_APPS/s/\[/\[\n    'storages',/g" $DJANGO_PROJECT/settings/base.py
 
 
 # USER FEEDBACK
