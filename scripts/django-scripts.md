@@ -86,3 +86,11 @@ $ bash scripts/e-heroku-setup.sh
 ```
 - Creates Procfile
 - Update allowed hosts
+
+
+#### Travis CI setup script
+```bash
+$ bash scripts/f-travis-ci-setup.sh
+```
+- Creates travis.yml file
+- Installs coverage
