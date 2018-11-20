@@ -68,3 +68,11 @@ Once the script has run, please reset the .bashrc file and .bash_aliases file
 source ~/.bashrc
 source venv/bin/activate
 ````
+
+#### AWS Setup script
+```bash
+$ bash scripts/d-aws-setup.sh
+```
+- Install boto, boto3, django-storages
+- Create custom_storages.py
+- 'storages' added to INSTALLED_APPS
