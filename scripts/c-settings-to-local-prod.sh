@@ -108,7 +108,7 @@ pip install dj-database-url
 pip freeze > requirements.txt
 
 
-# User feedback
+# USER FEEDBACK
 echo
 echo -e "\e[1;36m/---------- Local/Production Settings script ----------/\e[0m"
 echo "Installed: django-database-url"
