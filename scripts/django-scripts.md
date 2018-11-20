@@ -55,3 +55,16 @@ $ bash scripts/b-media-and-static.sh
 - Add static folder and media folder  
 - Install Pillow  
 - Add media context processor
+
+
+#### Split Settings to Development and Production script
+```
+$ bash scripts/c-settings-to-local-prod.sh
+```
+- Split settings.py file into local and production
+
+Once the script has run, please reset the .bashrc file and .bash_aliases file  
+```
+source ~/.bashrc
+source venv/bin/activate
+````
