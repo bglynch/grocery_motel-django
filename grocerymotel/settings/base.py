@@ -15,6 +15,7 @@ ALLOWED_HOSTS = ['grocery-motel-django-bglynch.c9users.io']
 # Application definition
 
 INSTALLED_APPS = [
+    'storages'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
