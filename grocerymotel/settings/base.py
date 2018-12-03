@@ -15,6 +15,8 @@ ALLOWED_HOSTS = ['grocery-motel-django-bglynch.c9users.io', 'bglynch-grocerymote
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
+    'accounts',
     'home',
     'storages',
     'django.contrib.admin',
@@ -88,3 +90,10 @@ USE_TZ = True
 
 # Message storage for flash messages
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+# Bootstrap version for crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# Login redirect location
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
