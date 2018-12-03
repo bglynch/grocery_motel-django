@@ -15,6 +15,7 @@ ALLOWED_HOSTS = ['grocery-motel-django-bglynch.c9users.io', 'bglynch-grocerymote
 # Application definition
 
 INSTALLED_APPS = [
+    'home',
     'storages',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +40,7 @@ ROOT_URLCONF = 'grocerymotel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
