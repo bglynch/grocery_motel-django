@@ -31,7 +31,7 @@
                         <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
                     {%  else %}
-                        <li><a href="#"><i class="fa fa-user-plus"></i> Register</a></li>
+                        <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
                         <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
                     {% endif %}
                 </ul>
@@ -41,6 +41,14 @@
 
    <hr>
    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        
         {% block content %}
         {% endblock content %}
        <hr>
