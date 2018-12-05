@@ -68,7 +68,7 @@ class TestAccountsViews(TestCase):
         User.objects.create_user(username="benji", email="benji@ex.com", password="h3!!oPass")
         self.client.login(username='benji', password='h3!!oPass')
         
-        page = self.client.get("/register/")
+        page = self.client.get("/register")
         
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "accounts/register.html")
@@ -76,7 +76,7 @@ class TestAccountsViews(TestCase):
     
     def test_register_a_new_user(self):
         
-        response = self.client.post("/register/", {
+        response = self.client.post("/register", {
             'username': 'benji',
             'email': 'benji@ex.com',
             'password1': 'h3!!oPass',
@@ -97,7 +97,7 @@ class TestAccountsViews(TestCase):
         User.objects.create_user(username="benji", email="benji@ex.com", password="h3!!oPass")
         self.client.login(username='benji', password='h3!!oPass')
         
-        page = self.client.get("/my_account/")
+        page = self.client.get("/my_account")
         
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "accounts/my-account.html")
