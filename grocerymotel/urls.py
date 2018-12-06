@@ -9,6 +9,8 @@ from django.urls import path, include
 from products import products_urls
 from home.views import get_home
 from accounts import accounts_urls
+from django.views.static import serve
+from django.conf import settings
 
 
 urlpatterns = [
@@ -16,4 +18,5 @@ urlpatterns = [
     path('products/', include(products_urls)),
     path('', include(accounts_urls)),
     path('', get_home, name="home"),
+    path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
