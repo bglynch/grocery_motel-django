@@ -15,6 +15,7 @@ ALLOWED_HOSTS = ['grocery-motel-django-bglynch.c9users.io', 'bglynch-grocerymote
 # Application definition
 
 INSTALLED_APPS = [
+    'products',
     'crispy_forms',
     'accounts',
     'home',

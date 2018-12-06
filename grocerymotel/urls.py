@@ -6,12 +6,14 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 """
 from django.contrib import admin
 from django.urls import path, include
+from products import products_urls
 from home.views import get_home
 from accounts import accounts_urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('products/', include(products_urls)),
     path('', include(accounts_urls)),
     path('', get_home, name="home"),
 ]
