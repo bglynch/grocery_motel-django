@@ -20,7 +20,7 @@ def register(request):
                 request, 
                 'Account created for {}!'.format(user_name)
                 )
-            return redirect('home')
+            return redirect('get_products')
     else:
         form = UserRegisterForm()
     return render(request, 'accounts/register.html', {'form': form})

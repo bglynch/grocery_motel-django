@@ -15,6 +15,7 @@ ALLOWED_HOSTS = ['grocery-motel-django-bglynch.c9users.io', 'bglynch-grocerymote
 # Application definition
 
 INSTALLED_APPS = [
+    'cart',
     'products',
     'crispy_forms',
     'accounts',
@@ -96,5 +97,5 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Login redirect location
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'get_products'
 LOGIN_URL = 'login'
