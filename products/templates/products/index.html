@@ -9,7 +9,8 @@
                     <div class="col-xs-9">
                         <p><span class="boldtext">Price: €</span> {{ product.price }} </p>
                         <img src="{{MEDIA_URL}}{{product.image}}" height="100"/>
-                         <form method="POST" action="/cart/add">
+                        
+                        <form method="POST" action="{% url 'cart_add' %}">
                             {% csrf_token %}
                             <input type="hidden" name="product_id" value="{{ product.id }}">
                             <input  name="submit.add-to-cart" type="submit" value="Add to Cart">

@@ -12,8 +12,7 @@
 <body>
     
    <h1>Our Django App</h1> 
-<!-- Fixed masthead -->
-    <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
+    <nav class='navbar navbar-masthead navbar-default navbar-fixed-top'>
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -30,9 +29,12 @@
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
                         <li><a href="{% url 'my_account' %}"><i class="fa fa-user"></i> My Account</a></li>
+                        <li><a href="{% url 'get_cart' %}">Cart</a></li>
+                        <li><a href="{% url 'get_products' %}">Products</a></li>
                     {%  else %}
                         <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
                         <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
+                        <li><a href="{% url 'get_cart' %}">Cart</a></li>
                     {% endif %}
                 </ul>
             </div>
