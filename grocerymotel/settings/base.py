@@ -100,3 +100,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # Login redirect location
 LOGIN_REDIRECT_URL = 'get_products'
 LOGIN_URL = 'login'
+
+# Keys to connect to Stripe
+STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET = os.environ.get('STRIPE_SECRET_KEY')

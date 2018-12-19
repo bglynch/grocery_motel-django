@@ -1,0 +1,41 @@
+{% autoescape off %}
+You're receiving this e-mail because you bought something at {{ site_name }}.
+
+Your username, in case you've forgotten: {{ user.username }}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>    
+            <th>Product</th>    
+            <th>Quantity</th>    
+            <th>Price</th>
+            <th>Total</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart_items %}
+        <tr>
+            <td><img width="150" height="75" src="{{MEDIA_URL}}{{item.image}}"/></td>    
+            <td>{{ item.name }}</td>    
+            <td>{{ item.quantity}}</td>    
+            <td>€{{ item.price }}</td>
+            <td>€{{ item.total}}</td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><strong>Total:</strong></td>
+            <td><strong>€{{total}}</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+Thanks for using our site!
+
+The {{ site_name }} team.
+
+{% endautoescape %}
