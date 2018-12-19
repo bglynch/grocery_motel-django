@@ -6,6 +6,5 @@ from .models import BaseProduct
 
 def get_products(request):
     products = BaseProduct.objects.all()
-    # context = {'products': products}
-    
+
     return render(request, "products/index.html", {'products': products})

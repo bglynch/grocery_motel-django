@@ -84,7 +84,7 @@ class TestAccountsViews(TestCase):
         })
         self.assertRedirects(
             response,
-            '/',
+            '/products/',
             status_code=302,
             target_status_code=200,
             fetch_redirect_response=True
