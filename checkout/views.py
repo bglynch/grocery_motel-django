@@ -25,8 +25,11 @@ def go_to_checkout(request):
             order.save()
         
             # Save the Order Line Items
+            userid = request.user.id
+            print(userid)
+            print(type(userid))
             cart = request.session.get('cart', {})
-            save_order_items(order, cart)
+            save_order_items(userid, order, cart)
         
             # Charge the Card
             items_and_total = get_cart_items_and_total(cart)
@@ -39,10 +42,10 @@ def go_to_checkout(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.success(request, "You have successfully paid")
 
                 # Send Email
-                send_confirmation_email(request.user.email, request.user, items_and_total)
+                # send_confirmation_email(request.user.email, request.user, items_and_total)
         
                 #Clear the Cart
                 del request.session['cart']

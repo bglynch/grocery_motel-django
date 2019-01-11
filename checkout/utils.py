@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
+from django.contrib.auth.models import User 
 import stripe
 
 from checkout.models import OrderLineItem
@@ -9,13 +10,17 @@ from products.models import BaseProduct
 
 stripe.api_key = settings.STRIPE_SECRET
 
-def save_order_items(order, cart):
+def save_order_items(userid, order, cart):
     for id, quantity in cart.items():
+        print(userid)
+        print(f"Typeis: {type(userid)}")
         product = get_object_or_404(BaseProduct, pk=id)
+        shopper = get_object_or_404(User, pk=userid)
         order_line_item = OrderLineItem(
             order = order,
             product = product,
-            quantity = quantity
+            quantity = quantity,
+            shopper = shopper
             )
         order_line_item.save()
         
