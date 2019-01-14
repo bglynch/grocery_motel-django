@@ -26,8 +26,6 @@ def go_to_checkout(request):
         
             # Save the Order Line Items
             userid = request.user.id
-            print(userid)
-            print(type(userid))
             cart = request.session.get('cart', {})
             save_order_items(userid, order, cart)
         

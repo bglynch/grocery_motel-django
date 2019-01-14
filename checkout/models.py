@@ -1,5 +1,4 @@
 from django.db import models
-from django.db import models
 from django.contrib.auth.models import User
 from products.models import BaseProduct
 
@@ -26,4 +25,4 @@ class OrderLineItem(models.Model):
     shopper = models.ForeignKey(User, null=False, related_name="orders_shopper", on_delete=models.PROTECT)
 
     def __str__(self):
-        return f"{self.shopper.id}: {self.quantity}No. {self.product.name} @ {self.product.price}"
+        return f"ShopperID:{self.shopper.id}: {self.quantity}No. {self.product.name} @ {self.product.price}--Order{self.order.id}"

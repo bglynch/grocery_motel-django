@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm
+from checkout.models import OrderLineItem, Order
 
 
 def register(request):
@@ -29,4 +30,16 @@ def register(request):
 # function to view user profile page, if user is logged in
 @login_required
 def my_account(request):
-    return render(request, 'accounts/my-account.html')
+    # get logged in user
+    user_id = request.user.id
+
+    # get users previous purchased products
+    previous_orders = OrderLineItem.objects.filter(shopper=user_id)
+
+    # get order numbers of the purchased products
+    order_numbers = sorted(list(set(order.order_id for order in previous_orders)), reverse=True)
+
+    # get a list of the customers previous orders
+    customer_orders = [Order.objects.filter(id=number).first() for number in order_numbers]
+
+    return render(request, 'accounts/my-account.html', {'customer_orders': customer_orders})
