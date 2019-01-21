@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'accounts',
     'home',
     'storages',
+    'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +55,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -104,3 +107,15 @@ LOGIN_URL = 'login'
 # Keys to connect to Stripe
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET = os.environ.get('STRIPE_SECRET_KEY')
+
+
+AUTHENTICATION_BACKENDS = (
+'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
+'social_core.backends.google.GoogleOpenId',  # for Google authentication
+'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+'django.contrib.auth.backends.ModelBackend',
+)
+
+# Keys to connect to GoogleOAuth
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.environ.get('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')

@@ -20,6 +20,7 @@ urlpatterns = [
     path('checkout/', include(checkout_urls)),
     path('cart/', include(cart_urls)),
     path('products/', include(products_urls)),
+    path('auth/', include('social_django.urls', namespace='social')),
     path('', include(accounts_urls)),
     path('', get_home, name="home"),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
